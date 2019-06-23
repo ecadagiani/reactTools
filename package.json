@@ -1,0 +1,26 @@
+{
+  "name": "reacttools",
+  "version": "1.0.0",
+  "description": "My React tools: functions, class, ...",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecadagiani/reactTools.git"
+  },
+  "author": "Eden Cadagiani <e.cadagiani@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecadagiani/reactTools/issues"
+  },
+  "homepage": "https://github.com/ecadagiani/reactTools#readme"
+}
