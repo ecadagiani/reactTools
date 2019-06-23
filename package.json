@@ -1,5 +1,5 @@
 {
-  "name": "reacttools",
+  "name": "@ecadagiani/reacttools",
   "version": "1.0.0",
   "description": "My React tools: functions, class, ...",
   "main": "index.js",
