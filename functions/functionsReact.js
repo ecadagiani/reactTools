@@ -21,8 +21,28 @@ function joinChildren(children, render, renderSeparator) {
     }, []);
 }
 
+function componentTypeStringToComponent(str){
+    switch (str) {
+    case "textarea":
+        return <textarea/>;
+    case "input":
+        return <input/>;
+    case "span":
+        return <span/>;
+    case "a":
+        return <a/>;
+    case "button":
+        return <button/>;
+    case "p":
+        return <p/>;
+    case "div":
+    default:
+        return <input/>;
+    }
+}
 
 module.exports = {
     flattenChildren,
     joinChildren,
+    componentTypeStringToComponent,
 };
