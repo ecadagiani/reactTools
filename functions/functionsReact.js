@@ -41,8 +41,13 @@ function componentTypeStringToComponent(str){
     }
 }
 
+function isComponent ( value ) {
+    return typeof value === "function" || value instanceof React.Component;
+}
+
 module.exports = {
     flattenChildren,
     joinChildren,
     componentTypeStringToComponent,
+    isComponent,
 };
