@@ -1,5 +1,4 @@
 const React = require( "react" );
-const {connect} = require( "react-redux" );
 
 
 /**
@@ -46,6 +45,7 @@ export function mapComponent ( array = [], CustomComponent ) {
  * @param arrayToProp {arrayToProp}
  * @param mapStateToProps {mapStateToProps}
  * @param mapDispatchToProps {mapDispatchToProps}
+ * @param connect {function} - redux connect function
  * @return {Component}
  * @example
  * const mapStateToProps = ( state ) => ({ ... });
@@ -53,7 +53,7 @@ export function mapComponent ( array = [], CustomComponent ) {
  * const arrayToProp = state => state.monArray;
  * const ListConnectedCardChart = mapConnect( arrayToProp, mapStateToProps, mapDispatchToProps )( MyComponent );
  */
-export function mapConnect ( arrayToProp, mapStateToProps, mapDispatchToProps ) {
+export function mapConnect ( arrayToProp, mapStateToProps, mapDispatchToProps, connect ) {
     const mapStateToPropArray = state => ({
         array: arrayToProp( state )
     });

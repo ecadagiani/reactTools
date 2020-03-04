@@ -70,5 +70,6 @@ const MyConnectedComponentArray = mapConnect(
     ( state ) => state.myArray,
     mapStateToProps,
     mapDispatchToProps,
+    connect
 )( MyComponent );
 ```

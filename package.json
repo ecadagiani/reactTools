@@ -1,6 +1,6 @@
 {
     "name": "@ecadagiani/reacttools",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "My React tools: functions, class, ...",
     "author": "Eden Cadagiani <e.cadagiani@gmail.com>",
     "license": "MIT",
@@ -23,12 +23,10 @@
     "peerDependencies": {
         "prop-types": "^15.7.2",
         "react": "^16.13.0",
-        "react-dom": "^16.13.0",
-        "react-redux": "^7.2.0"
+        "react-dom": "^16.13.0"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
-        "babel-eslint": "^8.2.5",
         "babel-plugin-external-helpers": "^6.22.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
@@ -41,7 +39,6 @@
         "eslint-plugin-import": "^2.13.0",
         "react": "^16.13.0",
         "react-dom": "^16.13.0",
-        "react-redux": "^7.2.0",
         "react-scripts": "^3.4.0",
         "rollup": "^1.32.0",
         "rollup-plugin-babel": "^3.0.7",
