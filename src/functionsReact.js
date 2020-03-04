@@ -1,30 +1,30 @@
-const React = require("react");
+const React = require( "react" );
 
-//from https://github.com/smooth-code/react-flatten-children
-function flattenChildren(children) {
-    return React.Children.toArray(children).reduce((flatChildren, child) => {
-        if (child.type === React.Fragment) {
-            return flatChildren.concat(flattenChildren(child.props.children));
+// from https://github.com/smooth-code/react-flatten-children
+function flattenChildren ( children ) {
+    return React.Children.toArray( children ).reduce(( flatChildren, child ) => {
+        if ( child.type === React.Fragment ) {
+            return flatChildren.concat( flattenChildren( child.props.children ));
         }
-        flatChildren.push(child);
+        flatChildren.push( child );
         return flatChildren;
     }, []);
 }
 
 
-function joinChildren(children, render, renderSeparator) {
-    return children.reduce((result, child, index) => {
-        if (index < children.length - 1) {
-            return result.concat([render(child, index), renderSeparator(index + "-separator")]);
+function joinChildren ( children, render, renderSeparator ) {
+    return children.reduce(( result, child, index ) => {
+        if ( index < children.length - 1 ) {
+            return result.concat([render( child, index ), renderSeparator( `${index }-separator` )]);
         }
 
-        return result.concat(render(child, index));
+        return result.concat( render( child, index ));
     }, []);
 }
 
 
-function componentTypeStringToComponent(str){
-    switch (str) {
+function componentTypeStringToComponent ( str ) {
+    switch ( str ) {
     case "textarea":
         return <textarea/>;
     case "input":

@@ -1,5 +1,5 @@
-const React = require("react");
-const {connect} = require("react-redux");
+const React = require( "react" );
+const {connect} = require( "react-redux" );
 
 
 /**
@@ -15,11 +15,11 @@ const {connect} = require("react-redux");
  */
 export function mapComponent ( array = [], CustomComponent ) {
     return ( props ) => (
-        <>
+        <React.Fragment>
             {array.map(( item, index ) => (
                 <CustomComponent key={item.id || index} {...item} {...props}/>
             ))}
-        </>
+        </React.Fragment>
     );
 }
 
@@ -53,19 +53,19 @@ export function mapComponent ( array = [], CustomComponent ) {
  * const arrayToProp = state => state.monArray;
  * const ListConnectedCardChart = mapConnect( arrayToProp, mapStateToProps, mapDispatchToProps )( MyComponent );
  */
-export function mapConnect ( arrayToProp, mapStateToProps, mapDispatchToProps) {
+export function mapConnect ( arrayToProp, mapStateToProps, mapDispatchToProps ) {
     const mapStateToPropArray = state => ({
-        array: arrayToProp(state)
+        array: arrayToProp( state )
     });
 
-    return (CustomComponent) => {
-        const ConnectedCustomComponent = connect(mapStateToProps, mapDispatchToProps)(CustomComponent);
+    return ( CustomComponent ) => {
+        const ConnectedCustomComponent = connect( mapStateToProps, mapDispatchToProps )( CustomComponent );
         const MapConnectedCustomComponent = ({array = []}) => (
-            <>
+            <React.Fragment>
                 {array.map(( item, index ) => (
                     <ConnectedCustomComponent key={item.id || index} {...item} />
                 ))}
-            </>
+            </React.Fragment>
         );
         return connect( mapStateToPropArray, null )( MapConnectedCustomComponent );
     };
