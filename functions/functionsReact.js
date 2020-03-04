@@ -11,6 +11,7 @@ function flattenChildren(children) {
     }, []);
 }
 
+
 function joinChildren(children, render, renderSeparator) {
     return children.reduce((result, child, index) => {
         if (index < children.length - 1) {
@@ -20,6 +21,7 @@ function joinChildren(children, render, renderSeparator) {
         return result.concat(render(child, index));
     }, []);
 }
+
 
 function componentTypeStringToComponent(str){
     switch (str) {
@@ -41,13 +43,23 @@ function componentTypeStringToComponent(str){
     }
 }
 
+
 function isComponent ( value ) {
     return typeof value === "function" || value instanceof React.Component;
 }
+
+
+function recursePropTypes ( getPropTypeCallback ) {
+    return function () {
+        return getPropTypeCallback().apply( this, arguments );
+    };
+}
+
 
 module.exports = {
     flattenChildren,
     joinChildren,
     componentTypeStringToComponent,
     isComponent,
+    recursePropTypes,
 };

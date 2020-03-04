@@ -1,6 +1,6 @@
 {
   "name": "@ecadagiani/reacttools",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "My React tools: functions, class, ...",
   "main": "index.js",
   "dependencies": {
